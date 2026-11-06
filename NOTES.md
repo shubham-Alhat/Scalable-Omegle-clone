@@ -29,12 +29,10 @@ In Development (Your Laptop): You use ports like `3000`, `5000`, or `8080` becau
 
 In Production (Render/VPS): You let the platform or a reverse proxy **(like Nginx)** listen on the standard public ports `(80/443)`, which then quietly routes the traffic to whatever internal port (process.env.PORT) your app is listening on.
 
-### A Flowchart of how actually all it works
+### A Flowchart of how it all works
 
-[ Your Browser ]
-│
-▼ (Sends request to Public IP on Port 443)
-[ Our app's Load Balancer / Reverse Proxy ] <-- Listens on Port 443
-│
-▼ (Forwards traffic internally)
-[ app's Internal Application Server ] <-- Might be listening on Port 8000 OR 8080
+```mermaid
+flowchart TD
+    A["🌐 Your Browser"] -->|"Sends request to Public IP on Port 443"| B["⚖️ Load Balancer / Reverse Proxy<br/>(listens on Port 443)"]
+    B -->|"Forwards traffic internally"| C["🖥️ Internal Application Server<br/>(might be listening on Port 8000 or 8080)"]
+```
