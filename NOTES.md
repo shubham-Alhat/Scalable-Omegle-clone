@@ -15,8 +15,8 @@ In prod, we usually deploy that same code above we discussed in prod. we have th
 How your browser knows which port to hit ?
 
 - When you type a URL, your browser looks at the very beginning of the address (the protocol):
-- If you type **http://**app.com, your browser assumes the standard, unencrypted web port: Port 80.
-- If you type **https://**app.com (which almost all websites use today), your browser assumes the secure, encrypted web port: Port 443.
+- If you type **http://** app.com, your browser assumes the standard, unencrypted web port: Port 80.
+- If you type **https://** app.com (which almost all websites use today), your browser assumes the secure, encrypted web port: Port 443.
   When you just type app.com and hit Enter, modern browsers automatically turn it into https://app.com. Behind the scenes, the browser takes app's IP address and attaches the default secure port, which is `443`.
 
 So, your browser is actually making a connection to: `142.250.190.46:443` (secure port)
