@@ -35,3 +35,10 @@ Best for: Live chat apps, real-time notifications, stock tickers, and collaborat
 **WebRTC (mostly built on top of UDP)**. It is a collection of protocols and APIs that allows direct, **peer-to-peer (P2P) connection between two devices/clients**. audio, video, and data sharing straight between two browsers or devices without any centralized server. It uses UDP for media speed and handles things like echo cancellation, jitter buffers, and NAT traversal (via STUN/TURN servers). **Best for: Video conferencing (like Google Meet), voice calls, and P2P file transfers.**
 
 ---
+
+### File descriptor in linux 🐧
+
+> [!Note]  
+> **Before going into file descriptor (fd), we need to know why we are going to learn fd ??**  
+> When scaling servers, the first wall or limitations we face is `file descriptor limit` **(Many files open error)**.
+> thats why we need to understand this.
