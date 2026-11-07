@@ -18,9 +18,9 @@ const shutdown = async (signal: string, code: number) => {
   });
 
   try {
+    await redis.quit();
     await mongoose.disconnect();
     console.log(`⛁ DB connection is closed.`);
-    await redis.quit();
     process.exit(code);
   } catch (error) {
     console.error("Error during shutdown: ", error);
