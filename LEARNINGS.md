@@ -18,8 +18,8 @@ Nodejs bydefault runs on single cpu core. we can run multiple instances of same 
 
 > [!Note]  
 > **Even though `TCP`, `UDP`, `Websockets` & `WebRTC` are all communication protocols, they operate at different layers of the networking stack and serve different purposes**  
-> TCP & UDP is on Transport layer on networking stack.
-> Websockets & WebRTC is on Application layer on networking stack.
+> TCP & UDP is on **Transport layer** on networking stack.
+> Websockets & WebRTC is on **Application layer** on networking stack.
 
 #### TCP & UDP
 
@@ -28,3 +28,10 @@ Nodejs bydefault runs on single cpu core. we can run multiple instances of same 
 **UDP (User Datagram Protocol)** is protocol optimized for **speed** over data reliability. it doesn't have a proper setup flow / rules to established a connection to server. it is Connectionless (sends data immediately without a handshake or prior setup). **it has low/best efforts. it does not retransmit lost data packets to destination.** Does not guarantee order and data acknowledgments. **Best for: Speed-critical applications where dropping a packet is better than waiting for a resend. eg: such as live video streaming, voice calls, and online gaming.**
 
 #### Websockets & WebRTC
+
+**Websockets (built on top of TCP)**. It starts with a standard HTTP connection and `upgrades` to a persistent, two-way (full-duplex) channel between a client (like a browser) and a server. Both sides can send data whenever they want without opening a new connection every time.
+Best for: Live chat apps, real-time notifications, stock tickers, and collaborative editing tools
+
+**WebRTC (mostly built on top of UDP)**. It is a collection of protocols and APIs that allows direct, **peer-to-peer (P2P) connection between two devices/clients**. audio, video, and data sharing straight between two browsers or devices without any centralized server. It uses UDP for media speed and handles things like echo cancellation, jitter buffers, and NAT traversal (via STUN/TURN servers). **Best for: Video conferencing (like Google Meet), voice calls, and P2P file transfers.**
+
+---
